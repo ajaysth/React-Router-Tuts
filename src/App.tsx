@@ -2,10 +2,10 @@ import { Routes, Route, Link } from "react-router-dom"
 import Home from "./pages/Home"
 import About from "./pages/About"
 import Contact from "./pages/Contact"
-import Profiles from "./pages/Profiles"
-import ProfileDetails from "./pages/ProfileDetails"
 import NewProfile from "./pages/NewProfile"
 import NotFound from "./pages/NotFound"
+import ProfileLists from "./components/ProfileLists"
+import ProfileRoute from "./routes/ProfileRoute"
 
 
 function App() {
@@ -28,8 +28,9 @@ function App() {
         <Route path="/home" element={<Home />} />
         <Route path="/about" element={<About />} />
         <Route path="/contact" element={<Contact />} />
-        <Route path="/profiles" element={<Profiles />} />
-        <Route path="/profiles/:id" element={<ProfileDetails />} />
+        <Route path="/profiles/*" element={<ProfileRoute />} />
+          
+    
         <Route path="/profiles/new" element={<NewProfile />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
