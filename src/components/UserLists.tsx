@@ -1,11 +1,14 @@
 import { Link } from "react-router-dom"
-import users from "../data/users"
+
 
 interface User{
     id: string;
     name: string;
 }
-const UserLists = () => {
+interface Users{
+    users: User[];
+}
+const UserLists = ({users}: Users) => {
     return (
         <>
             <h1 className="text-center text-4xl border w-full">Users Lists</h1>
