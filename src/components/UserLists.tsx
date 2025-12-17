@@ -1,14 +1,37 @@
 import { Link } from "react-router-dom"
 
 
-interface User{
-    id: string;
+export interface Geo {
+    lat: string;
+    lng: string;
+}
+
+export interface Address {
+    street: string;
+    suite: string;
+    city: string;
+    zipcode: string;
+    geo: Geo;
+}
+
+export interface Company {
     name: string;
+    catchPhrase: string;
+    bs: string;
 }
-interface Users{
-    users: User[];
+
+export interface User {
+    id: number;
+    name: string;
+    username: string;
+    email: string;
+    address: Address;
+    phone: string;
+    website: string;
+    company: Company;
 }
-const UserLists = ({users}: Users) => {
+
+const UserLists = ({users}: {users: User[]}) => {
     return (
         <>
             <h1 className="text-center text-4xl border w-full">Users Lists</h1>

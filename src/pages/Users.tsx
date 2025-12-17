@@ -1,16 +1,37 @@
 import UserLists from "../components/UserLists"
 import { useOutletContext } from "react-router-dom"
 
-interface User {
-    id: string;
-    name: string;  
+export interface Geo {
+    lat: string;
+    lng: string;
 }
 
-interface Users{
-    users: User[];
+export interface Address {
+    street: string;
+    suite: string;
+    city: string;
+    zipcode: string;
+    geo: Geo;
+}
+
+export interface Company {
+    name: string;
+    catchPhrase: string;
+    bs: string;
+}
+
+export interface User {
+    id: number;
+    name: string;
+    username: string;
+    email: string;
+    address: Address;
+    phone: string;
+    website: string;
+    company: Company;
 }
 const Users = () => {
-    const {users} = useOutletContext<Users>()
+    const {users} = useOutletContext<{users: User[]}>()
     return (
         <>
             <UserLists users={users} />
