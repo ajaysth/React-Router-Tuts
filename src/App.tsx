@@ -10,6 +10,8 @@ import Users from './pages/Users';
 import Books from "./pages/Books"
 import BookDetails from "./pages/BookDetails"
 import Posts from "./pages/Posts"
+import Quotes from "./pages/Quotes"
+import QuotesDetails from "./pages/QuotesDetails"
 
 
 
@@ -27,6 +29,7 @@ function App() {
           <li><NavLink to="/users">Users</NavLink></li>
           <li><NavLink to="/books">Books</NavLink></li>
           <li><NavLink to="/posts">Posts</NavLink></li>
+          <li><NavLink to="/quotes">Quotes</NavLink></li>
         </ul>
       </div>
 
@@ -37,9 +40,12 @@ function App() {
         <Route path="/about" element={<About />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="/profiles/*" element={<ProfileRoute />} />
-        <Route path="books" element={<Books />} />
-        <Route path="books/:id" element={<BookDetails />}/>
-        <Route path="posts" element={<Posts />}/>
+        <Route path="/books" element={<Books />} />
+        <Route path="/books/:id" element={<BookDetails />}/>
+        <Route path="/posts" element={<Posts />}/>
+        <Route path="/quotes/*" element={<Quotes />}/>
+        <Route path="/quotes/:id" element={<QuotesDetails />}/>
+         
 
         <Route path="/users/*" element={<UserRoute />}>
           <Route index element={<Users />} />
